@@ -1,0 +1,176 @@
+body {
+    background-image:url('../img/background.png');
+    width: 100%;
+    margin: 3% 3% 3% 3%;
+}
+
+
+header {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 51px;
+    font-size: 46px;
+    text-transform: uppercase;
+    margin: 0 0 23px 0;
+    }
+h2 {
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;  
+    font-variant:small-caps;
+    font-size: 24px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+p {
+    font-family: 'Droid Serif', serif;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+
+#intro {
+    display: block;
+    width: 45%;
+    min-width:500px;
+    font-style: oblique;
+}
+
+#jeu {
+    margin-top: 4%;
+}
+
+#pr {
+    display: inline-block;
+    padding : 2% 4% 2% 4%;
+    font-size: 24px;
+    line-height: 1.72;
+    background-color: #1CB2A2;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: -3px ;
+
+}
+
+#pr:hover {
+    background-color: #02CBAD;
+
+}
+
+#et {
+    display: inline-block;
+    padding : 2% 4% 2% 4%;
+    font-size: 24px;
+    line-height: 1.72;
+    background-color: #CEA65A;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: -3px ;
+
+}
+
+#et:hover {
+    background-color: #ffcc33;
+
+}
+
+#au {
+    display: inline-block;
+    padding : 2% 4% 2% 4%;
+    font-size: 24px;
+    line-height: 1.72;
+    background-color: #cc6633;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: -3px ;
+
+}
+
+#au:hover {
+    background-color: #ff6600;
+
+}
+
+#hi {
+    display: inline-block;
+    padding : 2% 4% 2% 4%;
+    font-size: 24px;
+    line-height: 1.72;
+    background-color: #4B5AA6;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: -3px ;
+
+}
+
+#hi:hover {
+    background-color: #0066cc;
+
+}
+
+#jouer {
+    display: inline-block;
+}
+
+#proposer {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input {
+    display: inline;
+    padding: 10px ;
+    background-color: black ;
+    color: white;
+    margin-top: 50px;
+    width: 90px;
+    height: auto;
+    
+}
+
+ul li {
+    list-style-type : none;
+    font-size: 22px;
+    padding-bottom: 25px;
+}
+
+#ete2 {
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border : solid 1px;
+    border-color: grey;
+    color: transparent;
+}
+
+article {
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 3%;
+    width: 400px;
+    height: auto;
+    border: dashed;
+    border-color: grey ;
+
+
+}
+
+footer p {
+    font-size: 12px;
+    margin-top: 100px;
+    margin-bottom: 1px;
+}
+
+img {
+    width: 800px;
+    margin-right: 5%;
+    margin-top: 10%;
+    height: auto;
+    float: right;
+    vertical-align: bottom;
+
+}

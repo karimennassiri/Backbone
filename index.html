@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Javascript -->
+    <script type='text/javascript' src="js/underscore.js"></script>
+    <script type='text/javascript' src="js/backbone.js"></script>
+    <script type='text/javascript' src="js/fichier.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css" />
+
+
+    <title>Haïku Season Game</title>
+  </head>
+  <body>
+
+    <!-- DEBUT HEADER -->
+    <header>
+    
+    <h1>Haïku Season Game</h1>
+
+      <section id="intro">
+        <p>
+        Bonjour petit samouraï, bienvenue dans le Haïku Season Game, afin de devenir un grand haïkiste
+        donneur de high-kick poétique, ce jeu va te permettre de réviser tes haïkus préférés. La règle
+        est simple, une strophe de Haiku te sera proposée, seulement il manquera un des trois vers, à toi de
+        trouver le bon vers correspondant en le choisissant dans les trois vers proposés sur la gauche.
+      </p>
+      </section>
+
+    </header>
+    <!-- FIN HEADER -->
+    <!-- DEBUT CONTENEUR -->
+    <section id="jeu">
+      <h2>Trouve le haïku manquant puis médite comme un chat ...</h2>
+      <nav>
+          <a id="pr" href=" #saison/View">Printemps</a>
+          <a id="et" href="#saison/ete">Été</a> 
+          <a id="au" href="#saison/automne">Automne</a>
+          <a id="hi" href="#saison/hiver">Hiver</a>
+      </nav>
+
+
+        <section id="validation">
+
+
+        <article id="jouer">
+           <?php 
+              include("ete_requete.php"); 
+           ?>
+
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+           
+
+        </article><!-- FIN jouer-->
+
+        <article id="proposer">
+          <?php 
+                $connexion = new PDO("mysql:host=localhost;dbname=haikus","root", "root"); // connexion à la BDD
+
+    $requette=$connexion->query("SELECT * from haikuAuteurId where saison='ete' order by RAND() limit 1 "); //Requêtte pour extraire les haikus de l'été. 
+
+    $requette->setFetchMode(PDO::FETCH_OBJ);
+    while($resultat = $requette->fetch()){
+        echo '<ul>';
+        echo '<li id="ete1">'.$resultat->l1.'</li>';
+        echo '<li id="ete2">'.$resultat->l2.'</li>';
+        echo '<li id="ete3">'.$resultat->l3.'</li>';
+        echo '</ul>';
+
+        $_SESSION['test']= $resultat->l2;
+
+    }
+
+      $requette->closeCursor();
+            ?>
+        </article> <!-- FIN proposer-->
+
+        <form>
+          <input type='reset' name='raz' value="Annuler" /><br/>
+          <input type='submit' name='validation' value="Valider" /><br/>
+        </form>
+
+    </section> <!-- FIN Validation-->
+
+    </section> <!-- FIN Jeu -->
+
+    <footer>
+    <p>Made with HTML5, CSS3, et Backbone.js and JQuery. Laetitia Pot, Karim Ennassiri, Loup Cellard. INF04 Master Archinfo.</p>
+    </footer>
+
+  </body>
+  <!-- FIN BODY-->
+</html>
